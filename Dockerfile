@@ -14,11 +14,11 @@ RUN R -e "install.packages('plumber')"
 # Set the working directory
 WORKDIR /app
 
-# Copy the API script and the model into the container
+# Copy the API script and model into the container
 COPY model_api.R /app/model_api.R
 COPY heart_model.RData /app/heart_model.RData
 
-# Expose the port that the API will run on
+# Expose the port for the API
 EXPOSE 8000
 
 # Start the R API
