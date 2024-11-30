@@ -16,7 +16,7 @@ WORKDIR /app
 
 # Copy the API script and the model into the container
 COPY model_api.R /app/model_api.R
-COPY path_to_your_model.RData /app/path_to_your_model.RData
+COPY heart_model.RData /app/heart_model.RData
 
 # Expose the port that the API will run on
 EXPOSE 8000
