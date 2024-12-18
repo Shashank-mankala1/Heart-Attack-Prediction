@@ -1,0 +1,295 @@
+
+*, body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    overflow-x: hidden;
+    font-family: 'Open Sans', sans-serif;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+li{
+    
+    list-style: none;
+    display: inline-block
+}
+
+a {
+    
+    text-decoration: none;
+    transition: all 500ms ease-in-out;
+}
+
+a:hover,
+a:active {
+    
+        text-decoration: none;
+}
+
+h1,
+h2,
+h4 {
+    font-family: 'PT Sans Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+H1{
+    color: #18d22d !important;
+    font-size: 50px !important;
+    
+}
+.homepagecontainer{
+    position: relative;
+    z-index: 10;
+}
+
+p {
+    font-size: 15px;
+    line-height: 21px;
+}
+
+.btn {
+    
+    transition: all 300ms ease-in-out;
+    font-weight: 500 !important;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+     
+    background-color:  #ededed !important;
+    color: #3c3c3c !important;
+    border: 1px solid #fff !important;
+}
+
+
+/*-------------------------Header------------------*/
+
+.header{
+    height: 100vh;
+    width: 100%;
+    /* padding: 100px 0 30px; */
+    background-image: url(img/homepagebg.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+
+.overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust the 0.5 value for more/less tint */
+    z-index: 1;
+  }
+
+
+.header img{
+    height: 250px;
+    width: 350px;
+    margin: 70px 0 0 40px;
+}
+
+.header h1 {
+    font-size: 40px;
+    font-weight: 700;
+    padding-top: 60px;
+}
+
+.header h1,
+.header p,
+.header button {
+    
+    margin-top: 30px;
+}
+
+.header .btn {
+    
+/*    border-radius: 0;*/
+    margin: 40px 20px;
+}
+
+
+header,
+footer {
+    background-color: #004d99;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+.predictbtndiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    align-content: center;
+    flex-direction: column;
+}
+.predictbtn{
+    margin-left: 200px;
+}
+
+.textcontainer{
+    margin-top: 10%;
+    margin-left: 5%;
+}
+
+.sectionheading{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    /* border: 1px red solid; */
+    font-weight: bold;
+    color: white;
+    background-color: black;
+}
+
+
+.sectiondiv{
+    width: 100%;
+    height: 100vh;
+    border: 2px red solid;
+}
+
+.tableauViz{
+    height: 100%;
+}
+
+
+.container {
+    padding: 20px;
+    padding-top: 15%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.button {
+    padding: 10px 15px;
+    color: white;
+    background-color: #004d99;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #003366;
+}
+
+.dashboard {
+    width: 100%;
+    height: 500px;
+    border: none;
+}
+
+
+/* Modal  */
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4);
+    overflow-y: auto !important;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50% !important;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+
+.predictForm{
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.formfielddata{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: .5rem;
+}
+
+.formlabel{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+    padding-top: 2px;
+}
+
+.forminput{
+    width: 50%;
+    padding-left: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.submitBtn{
+    padding: 4px;
+    width: 100px;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    background: #29a645;
+    color: white;
+}
+
+.formheading>p{
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
