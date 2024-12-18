@@ -7,278 +7,290 @@
     <title>Heart Attack Prediction</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="img/hearticon.png">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <body>
     <section1>
         <div class="overlay"></div>
         <div id="header" class="header">
-        <div class="homepagecontainer">
-            <div class="row">
-                <div class="textcontainer">
-                    <h1>PREDICT YOUR HEART RISK !</h1>
-                    <p> Heart Attack Risk Predictor: Know Your Heart, Save Your Life. </p>
-                    <div class="predictbtndiv">
-                        <button id="predictBtn" type="button" class="btn btn-success" text-transform="unset !important">Predict Now!</button>
+            <div class="homepagecontainer">
+                <div class="row">
+                    <div class="textcontainer">
+                        <h1>PREDICT YOUR HEART RISK !</h1>
+                        <p> Heart Attack Risk Predictor: Know Your Heart, Save Your Life. </p>
+                        <div class="predictbtndiv">
+                            <button id="predictBtn" type="button" class="btn btn-success"
+                                text-transform="unset !important">Predict Now!</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div id="predictModal" class="modal">
-            <div class="modal-content">
-                <span class="close" id="closeModal">&times;</span>
-                <h2>Enter Details</h2>
-                <form id="predictForm" class="predictForm" style="color: black; display: flex;">
-                    <div class="formheading">
-                        <p>Enter Your Details</p>
-                    </div>
-                    <div class="formfielddata">
-                        <label class="formlabel" for="field1">State:</label>
-                        <select id="field1" name="state" class="forminput" required>
-                            <option value="">Select State</option>
-                            <option value="Alabama">Alabama</option>
-                            <option value="Alaska">Alaska</option>
-                            <option value="Arizona">Arizona</option>
-                            <option value="Arkansas">Arkansas</option>
-                            <option value="California">California</option>
-                            <option value="Colorado">Colorado</option>
-                            <option value="Connecticut">Connecticut</option>
-                            <option value="Delaware">Delaware</option>
-                            <option value="District of Columbia">District of Columbia</option>
-                            <option value="Florida">Florida</option>
-                            <option value="Georgia">Georgia</option>
-                            <option value="Guam">Guam</option>
-                            <option value="Hawaii">Hawaii</option>
-                            <option value="Idaho">Idaho</option>
-                            <option value="Illinois">Illinois</option>
-                            <option value="Indiana">Indiana</option>
-                            <option value="Iowa">Iowa</option>
-                            <option value="Kansas">Kansas</option>
-                            <option value="Kentucky">Kentucky</option>
-                            <option value="Louisiana">Louisiana</option>
-                            <option value="Maine">Maine</option>
-                            <option value="Maryland">Maryland</option>
-                            <option value="Massachusetts">Massachusetts</option>
-                            <option value="Michigan">Michigan</option>
-                            <option value="Minnesota">Minnesota</option>
-                            <option value="Mississippi">Mississippi</option>
-                            <option value="Missouri">Missouri</option>
-                            <option value="Montana">Montana</option>
-                            <option value="Nebraska">Nebraska</option>
-                            <option value="Nevada">Nevada</option>
-                            <option value="New Hampshire">New Hampshire</option>
-                            <option value="New Jersey">New Jersey</option>
-                            <option value="New Mexico">New Mexico</option>
-                            <option value="New York">New York</option>
-                            <option value="North Carolina">North Carolina</option>
-                            <option value="North Dakota">North Dakota</option>
-                            <option value="Ohio">Ohio</option>
-                            <option value="Oklahoma">Oklahoma</option>
-                            <option value="Oregon">Oregon</option>
-                            <option value="Pennsylvania">Pennsylvania</option>
-                            <option value="Puerto Rico">Puerto Rico</option>
-                            <option value="Rhode Island">Rhode Island</option>
-                            <option value="South Carolina">South Carolina</option>
-                            <option value="South Dakota">South Dakota</option>
-                            <option value="Tennessee">Tennessee</option>
-                            <option value="Texas">Texas</option>
-                            <option value="Utah">Utah</option>
-                            <option value="Vermont">Vermont</option>
-                            <option value="Virgin Islands">Virgin Islands</option>
-                            <option value="Virginia">Virginia</option>
-                            <option value="Washington">Washington</option>
-                            <option value="West Virginia">West Virginia</option>
-                            <option value="Wisconsin">Wisconsin</option>
-                            <option value="Wyoming">Wyoming</option>
-                        </select>
-                        
-                    </div>
-                    <div class="formfielddata">
-                        <label class="formlabel" for="field2">Sex:</label>
-                        <select id="field2" name="sex" class="forminput" required>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                        </select>
-                    </div>
-                    <div class="formfielddata">
-                        <label class="formlabel" for="field3">General Health:</label>
-                        <select id="field3" name="generalhealth" class="forminput" required>
-                            <option value="Excellent">Excellent</option>
-                            <option value="Very Good">Very Good</option>
-                            <option value="Good">Good</option>
-                            <option value="Fair">Fair</option>
-                            <option value="Poor">Poor</option>
-                        </select>
-                    </div>
-                    <div class="formfielddata">
-                        <label class="formlabel" for="field4">Physical Health Days:</label>
-                        <input type="number" id="field4" class="forminput" placeholder="Enter Physical Health Days" min="0" max="30" step="1" required>
-                    </div>
-                    <div class="formfielddata">
-                        <label class="formlabel" for="field5">Mental Health Days:</label>
-                        <input type="number" id="field5" class="forminput" placeholder="Enter Mental Health Days" min="0" max="30" step="1"  required>
-                    </div>
-                    <div class="formfielddata">
-                        <label class="formlabel" for="field6">Last Checkup Time:</label>
-                        <select id="field6" name="lastCheckup" required>
-                            <option value="5_or_more_years">5 or more years ago</option>
-                            <option value="within_2_years">Within past 2 years (1 year but less than 2 years ago)</option>
-                            <option value="within_5_years">Within past 5 years (2 years but less than 5 years ago)</option>
-                            <option value="within_1_year">Within past year (anytime less than 12 months ago)</option>
-                        </select>
-                    </div>
-                    <div class="formfielddata">
-                        <label class="formlabel" for="field7">Physical Activities:</label>
-                        <select id="field7" name="physicalactivities" class="forminput" required>
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
-                    </div>
-                    <div class="formfielddata">
-                        <label class="formlabel" for="field8">Sleep Hours:</label>
-                        <input type="number" id="field8" class="forminput" placeholder="Enter Sleep Hours" min="0" max="24" step="1"   required>
-                    </div>
-                    <div class="formfielddata">
-                        <label class="formlabel" for="field9">Removed Teeth:</label>
-                        <select id="field9" name="removedteeth" class="forminput" required>
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
-                    </div>
-                    <div class="formfielddata">
-                        <label class="formlabel" for="field10">Had Angina:</label>
-                        <select id="field10" name="hadangina" class="forminput" required>
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
-                    </div>
-                    <div class="formfielddata">
-                        <label class="formlabel" for="fiel11">Had Stroke:</label>
-                        <select id="field7" name="physicalactivities" class="forminput" required>
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
-                    </div>
-                    <div class="formfielddata">
-                        <label class="formlabel" for="field12">Had Asthma:</label>
-                        <select id="field12" name="hadasthma" class="forminput" required>
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
-                    </div>
-                    <div class="formfielddata">
-                        <label class="formlabel" for="field13">Had Skin Cancer:</label>
-                        <select id="field13" name="hadskincancer" class="forminput" required>
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
-                    </div>
-                    <div class="formfielddata">
-                        <label class="formlabel" for="field14">Had COPD:</label>
-                        <select id="field14" name="hadcopd" class="forminput" required>
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
-                    </div>
-                    <div class="formfielddata">
-                        <label class="formlabel" for="field15">Had Depressive Disorder:</label>
-                        <select id="field15" name="haddepressivedisorder" class="forminput" required>
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
-                    </div>
-                    <div class="formfielddata">
-                        <label class="formlabel" for="field16">Had Kidney Disease:</label>
-                        <select id="field16" name="hadkidneydisease" class="forminput" required>
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
-                    </div>
-                    <div class="formfielddata">
-                        <label class="formlabel" for="field17">Had Arthritis:</label>
-                        <select id="field17" name="hadarthritis" class="forminput" required>
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
-                    </div>
-                    <div class="formfielddata">
-                        <label class="formlabel" for="field18">Had Diabetes:</label>
-                        <select id="field18" name="haddiabetes" class="forminput" required>
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
-                    </div>
-                    <div class="formfielddata">
-                        <label class="formlabel" for="field19">Deaf or hard of hearing:</label>
-                        <select id="field19" name="deaf" class="forminput" required>
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
-                    </div>
-                    <div class="formfielddata">
-                        <label class="formlabel" for="field20">Blind or Vision difficulty:</label>
-                        <select id="field20" name="blind" class="forminput" required>
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
-                    </div>
-                    <div class="formfielddata">
-                        <label class="formlabel" for="field21">Do you Smoke?:</label>
-                        <select id="field20" name="blind" class="forminput" required>
-                            <option value="currentnoweveryday">Current smoker - now smokes every day</option>
-                            <option value="currentnowsomeday">Current smoker - now smokes some days</option>
-                            <option value="formersmoker">Former Smoker</option>
-                            <option value="neversmoked">Never Smoked</option>
-                        </select>
-                    </div>
-                    <div class="formfielddata">
-                        <label class="formlabel" for="field22">Race Ethnicity Category:</label>
-                        <select id="field22" name="raceEthnicity" class="forminput" required>
-                            <option value="black_non_hispanic">Black only, Non-Hispanic</option>
-                            <option value="hispanic">Hispanic</option>
-                            <option value="multiracial_non_hispanic">Multiracial, Non-Hispanic</option>
-                            <option value="other_non_hispanic">Other race only, Non-Hispanic</option>
-                            <option value="white_non_hispanic">White only, Non-Hispanic</option>
-                        </select>
-                    </div>
-                    <div class="formfielddata">
-                        <label class="formlabel" for="field23">Age Category:</label>
-                        <select id="field23" name="ageCategory" required>
-                            <option value="18_24">Age 18 to 24</option>
-                            <option value="25_29">Age 25 to 29</option>
-                            <option value="30_34">Age 30 to 34</option>
-                            <option value="35_39">Age 35 to 39</option>
-                            <option value="40_44">Age 40 to 44</option>
-                            <option value="45_49">Age 45 to 49</option>
-                            <option value="50_54">Age 50 to 54</option>
-                            <option value="55_59">Age 55 to 59</option>
-                            <option value="60_64">Age 60 to 64</option>
-                            <option value="65_69">Age 65 to 69</option>
-                            <option value="70_74">Age 70 to 74</option>
-                            <option value="75_79">Age 75 to 79</option>
-                            <option value="80_or_older">Age 80 or older</option>
-                        </select>
-                    </div>
-                    <div class="formfielddata">
-                        <label class="formlabel" for="field24">Height in Meters:</label>
-                        <input type="number" id="field24" class="forminput" placeholder="Enter Height in Meters" min="0.9" max="2.5" step="0.01" required>
-                    </div>
-                    <div class="formfielddata">
-                        <label class="formlabel" for="field25">Weight in Kilograms:</label>
-                        <input type="number" id="field25" class="forminput" placeholder="Enter Weight in Kilograms" min="20" max="250" step="1" required>
-                    </div>
-                    <div class="formfielddata">
-                        <label class="formlabel" for="field26">BMI:</label>
-                        <input type="number" id="field26" class="forminput" placeholder="Enter BMI" min="10" max="100" step="1"   required>
-                    </div>
-                    
+            <div id="predictModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="closeModal">&times;</span>
+                    <h2>Enter Details</h2>
+                    <form id="predictForm" class="predictForm" style="color: black; display: flex;">
+                        <div class="formheading">
+                            <p>Enter Your Details</p>
+                        </div>
+                        <div class="formfielddata">
+                            <label class="formlabel" for="field1">State:</label>
+                            <select id="field1" name="state" class="forminput" required>
+                                <option value="">Select State</option>
+                                <option value="Alabama">Alabama</option>
+                                <option value="Alaska">Alaska</option>
+                                <option value="Arizona">Arizona</option>
+                                <option value="Arkansas">Arkansas</option>
+                                <option value="California">California</option>
+                                <option value="Colorado">Colorado</option>
+                                <option value="Connecticut">Connecticut</option>
+                                <option value="Delaware">Delaware</option>
+                                <option value="District of Columbia">District of Columbia</option>
+                                <option value="Florida">Florida</option>
+                                <option value="Georgia">Georgia</option>
+                                <option value="Guam">Guam</option>
+                                <option value="Hawaii">Hawaii</option>
+                                <option value="Idaho">Idaho</option>
+                                <option value="Illinois">Illinois</option>
+                                <option value="Indiana">Indiana</option>
+                                <option value="Iowa">Iowa</option>
+                                <option value="Kansas">Kansas</option>
+                                <option value="Kentucky">Kentucky</option>
+                                <option value="Louisiana">Louisiana</option>
+                                <option value="Maine">Maine</option>
+                                <option value="Maryland">Maryland</option>
+                                <option value="Massachusetts">Massachusetts</option>
+                                <option value="Michigan">Michigan</option>
+                                <option value="Minnesota">Minnesota</option>
+                                <option value="Mississippi">Mississippi</option>
+                                <option value="Missouri">Missouri</option>
+                                <option value="Montana">Montana</option>
+                                <option value="Nebraska">Nebraska</option>
+                                <option value="Nevada">Nevada</option>
+                                <option value="New Hampshire">New Hampshire</option>
+                                <option value="New Jersey">New Jersey</option>
+                                <option value="New Mexico">New Mexico</option>
+                                <option value="New York">New York</option>
+                                <option value="North Carolina">North Carolina</option>
+                                <option value="North Dakota">North Dakota</option>
+                                <option value="Ohio">Ohio</option>
+                                <option value="Oklahoma">Oklahoma</option>
+                                <option value="Oregon">Oregon</option>
+                                <option value="Pennsylvania">Pennsylvania</option>
+                                <option value="Puerto Rico">Puerto Rico</option>
+                                <option value="Rhode Island">Rhode Island</option>
+                                <option value="South Carolina">South Carolina</option>
+                                <option value="South Dakota">South Dakota</option>
+                                <option value="Tennessee">Tennessee</option>
+                                <option value="Texas">Texas</option>
+                                <option value="Utah">Utah</option>
+                                <option value="Vermont">Vermont</option>
+                                <option value="Virgin Islands">Virgin Islands</option>
+                                <option value="Virginia">Virginia</option>
+                                <option value="Washington">Washington</option>
+                                <option value="West Virginia">West Virginia</option>
+                                <option value="Wisconsin">Wisconsin</option>
+                                <option value="Wyoming">Wyoming</option>
+                            </select>
 
-                    <button type="submit" class="submitBtn">Submit</button>
-                </form>
+                        </div>
+                        <div class="formfielddata">
+                            <label class="formlabel" for="field2">Sex:</label>
+                            <select id="field2" name="sex" class="forminput" required>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                        <div class="formfielddata">
+                            <label class="formlabel" for="field3">General Health:</label>
+                            <select id="field3" name="generalhealth" class="forminput" required>
+                                <option value="Excellent">Excellent</option>
+                                <option value="Very Good">Very Good</option>
+                                <option value="Good">Good</option>
+                                <option value="Fair">Fair</option>
+                                <option value="Poor">Poor</option>
+                            </select>
+                        </div>
+                        <div class="formfielddata">
+                            <label class="formlabel" for="field4">Physical Health Days:</label>
+                            <input type="number" id="field4" class="forminput" placeholder="Enter Physical Health Days"
+                                min="0" max="30" step="1" required>
+                        </div>
+                        <div class="formfielddata">
+                            <label class="formlabel" for="field5">Mental Health Days:</label>
+                            <input type="number" id="field5" class="forminput" placeholder="Enter Mental Health Days"
+                                min="0" max="30" step="1" required>
+                        </div>
+                        <div class="formfielddata">
+                            <label class="formlabel" for="field6">Last Checkup Time:</label>
+                            <select id="field6" name="lastCheckup" required>
+                                <option value="5 or more years ago">5 or more years ago</option>
+                                <option value="Within past 2 years (1 year but less than 2 years ago)">Within past 2 years (1 year but less than 2 years ago)
+                                </option>
+                                <option value="Within past 5 years (2 years but less than 5 years ago)">Within past 5 years (2 years but less than 5 years ago)
+                                </option>
+                                <option value="Within past year (anytime less than 12 months ago)">Within past year (anytime less than 12 months ago)
+                                </option>
+                            </select>
+                        </div>
+                        <div class="formfielddata">
+                            <label class="formlabel" for="field7">Physical Activities:</label>
+                            <select id="field7" name="physicalactivities" class="forminput" required>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="formfielddata">
+                            <label class="formlabel" for="field8">Sleep Hours:</label>
+                            <input type="number" id="field8" class="forminput" placeholder="Enter Sleep Hours" min="0"
+                                max="24" step="1" required>
+                        </div>
+                        <div class="formfielddata">
+                            <label class="formlabel" for="field9">Removed Teeth:</label>
+                            <select id="field9" name="removedteeth" class="forminput" required>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="formfielddata">
+                            <label class="formlabel" for="field10">Had Angina:</label>
+                            <select id="field10" name="hadangina" class="forminput" required>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="formfielddata">
+                            <label class="formlabel" for="fiel11">Had Stroke:</label>
+                            <select id="field11" name="physicalactivities" class="forminput" required>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="formfielddata">
+                            <label class="formlabel" for="field12">Had Asthma:</label>
+                            <select id="field12" name="hadasthma" class="forminput" required>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="formfielddata">
+                            <label class="formlabel" for="field13">Had Skin Cancer:</label>
+                            <select id="field13" name="hadskincancer" class="forminput" required>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="formfielddata">
+                            <label class="formlabel" for="field14">Had COPD:</label>
+                            <select id="field14" name="hadcopd" class="forminput" required>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="formfielddata">
+                            <label class="formlabel" for="field15">Had Depressive Disorder:</label>
+                            <select id="field15" name="haddepressivedisorder" class="forminput" required>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="formfielddata">
+                            <label class="formlabel" for="field16">Had Kidney Disease:</label>
+                            <select id="field16" name="hadkidneydisease" class="forminput" required>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="formfielddata">
+                            <label class="formlabel" for="field17">Had Arthritis:</label>
+                            <select id="field17" name="hadarthritis" class="forminput" required>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="formfielddata">
+                            <label class="formlabel" for="field18">Had Diabetes:</label>
+                            <select id="field18" name="haddiabetes" class="forminput" required>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="formfielddata">
+                            <label class="formlabel" for="field19">Deaf or hard of hearing:</label>
+                            <select id="field19" name="deaf" class="forminput" required>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="formfielddata">
+                            <label class="formlabel" for="field20">Blind or Vision difficulty:</label>
+                            <select id="field20" name="blind" class="forminput" required>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="formfielddata">
+                            <label class="formlabel" for="field21">Do you Smoke?:</label>
+                            <select id="field21" name="blind" class="forminput" required>
+                                <option value="Current smoker - now smokes every day">Current smoker - now smokes every day</option>
+                                <option value="Current smoker - now smokes some days">Current smoker - now smokes some days</option>
+                                <option value="Former Smoker">Former Smoker</option>
+                                <option value="Never Smoked">Never Smoked</option>
+                            </select>
+                        </div>
+                        <div class="formfielddata">
+                            <label class="formlabel" for="field22">Race Ethnicity Category:</label>
+                            <select id="field22" name="raceEthnicity" class="forminput" required>
+                                <option value="Black only, Non-Hispanic">Black only, Non-Hispanic</option>
+                                <option value="Hispanic">Hispanic</option>
+                                <option value="Multiracial, Non-Hispanic">Multiracial, Non-Hispanic</option>
+                                <option value="Other race only, Non-Hispanic">Other race only, Non-Hispanic</option>
+                                <option value="White only, Non-Hispanic">White only, Non-Hispanic</option>
+                            </select>
+                        </div>
+                        <div class="formfielddata">
+                            <label class="formlabel" for="field23">Age Category:</label>
+                            <select id="field23" name="ageCategory" required>
+                                <option value="Age 25 to 29">Age 25 to 29</option>
+                                <option value="Age 30 to 34">Age 30 to 34</option>
+                                <option value="Age 35 to 39">Age 35 to 39</option>
+                                <option value="Age 18 to 24">Age 18 to 24</option>
+                                <option value="Age 40 to 44">Age 40 to 44</option>
+                                <option value="Age 45 to 49">Age 45 to 49</option>
+                                <option value="Age 50 to 54">Age 50 to 54</option>
+                                <option value="Age 55 to 59">Age 55 to 59</option>
+                                <option value="Age 60 to 64">Age 60 to 64</option>
+                                <option value="Age 65 to 69">Age 65 to 69</option>
+                                <option value="Age 70 to 74">Age 70 to 74</option>
+                                <option value="Age 75 to 79">Age 75 to 79</option>
+                                <option value="Age 80 or older">Age 80 or older</option>
+                            </select>
+                        </div>
+                        <div class="formfielddata">
+                            <label class="formlabel" for="field24">Height in Meters:</label>
+                            <input type="number" id="field24" class="forminput" placeholder="Enter Height in Meters"
+                                min="0.9" max="2.5" step="0.01" required>
+                        </div>
+                        <div class="formfielddata">
+                            <label class="formlabel" for="field25">Weight in Kilograms:</label>
+                            <input type="number" id="field25" class="forminput" placeholder="Enter Weight in Kilograms"
+                                min="20" max="250" step="1" required>
+                        </div>
+                        <div class="formfielddata">
+                            <label class="formlabel" for="field26">BMI:</label>
+                            <input type="number" id="field26" class="forminput" placeholder="Enter BMI" min="10"
+                                max="100" step="1" required>
+                        </div>
+
+
+                        <button type="submit" class="submitBtn">Submit</button>
+                    </form>
+                    <div class="result" id="result" style="color: black;"></div>
+                </div>
             </div>
         </div>
-    </div>
     </section1>
     <section2>
         <div class="sectiondiv dashboard">
@@ -289,8 +301,9 @@
             <div class='tableauPlaceholder' id='viz1733007406024' style='position: absolute; height:100% '>
                 <noscript>
                     <a href='#'>
-                        <img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;de&#47;delete_17330073563710&#47;Dashboard1&#47;1_rss.png'
-                                style='border: none' />
+                        <img alt='Dashboard 1 '
+                            src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;de&#47;delete_17330073563710&#47;Dashboard1&#47;1_rss.png'
+                            style='border: none' />
                     </a>
                 </noscript>
                 <object class='tableauViz' style='display:none; height: 100%;'>
@@ -323,7 +336,7 @@
 
     </section3>
 
-    
+
 
     <!-- <header>
         <h1>Heart Attack Prediction</h1>

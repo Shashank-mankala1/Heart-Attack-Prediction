@@ -69,11 +69,107 @@ window.onclick = function(event) {
 }
 
 // Handle form submission
-document.getElementById("predictForm").onsubmit = function(event) {
+// document.getElementById("predictForm").onsubmit = function(event) {
+//     event.preventDefault();
+//     const field1 = document.getElementById("field1").value;
+//     const field2 = document.getElementById("field2").value;
+//     const field3 = document.getElementById("field3").value;
+//     alert(`Submitted Values:\nField 1: ${field1}\nField 2: ${field2}\nField 3: ${field3}`);
+//     modal.style.display = "none"; // Close modal after submission
+// }
+
+
+
+// document.getElementById("predictForm").addEventListener("submit", async function (event) {
+// // document.getElementById("predictForm").onsubmit = function(event) {
+//     event.preventDefault();
+
+//     const fieldRange = 1;
+//     const maxFields = 26;
+
+//     const formData = {};
+
+//     for (let i = fieldRange; i <= maxFields; i++) {
+//         const fieldId = `field${i}`;
+//         const fieldElement = document.getElementById(fieldId);
+//         if (fieldElement) {
+//             formData[fieldId] = fieldElement.value;
+//         }
+//     }
+//     console.log(formData);
+
+//     try {
+//         // Send the data to the Heroku API
+//         const response = await fetch("https://2c2930de10934de28b7c17a09afa6c99.app.posit.cloud/predict", {
+//             method: "POST",
+//             headers: {
+//                 "Content-Type": "application/json"
+//             },
+//             body: JSON.stringify(formData)
+//         });
+
+//         const result = await response.json();
+
+//         // Display the result
+//         document.getElementById("result").innerText = `Prediction: ${result.prediction}`;
+//     } catch (error) {
+//         console.error("Error:", error);
+//         document.getElementById("result").innerText = "Error fetching prediction. Please try again.";
+//     }
+// });
+
+
+document.getElementById("predictForm").addEventListener("submit", async function (event) {
     event.preventDefault();
-    const field1 = document.getElementById("field1").value;
-    const field2 = document.getElementById("field2").value;
-    const field3 = document.getElementById("field3").value;
-    alert(`Submitted Values:\nField 1: ${field1}\nField 2: ${field2}\nField 3: ${field3}`);
-    modal.style.display = "none"; // Close modal after submission
-}
+
+    const formData = {
+        state: document.getElementById("field1").value,
+        sex: document.getElementById("field2").value,
+        generalHealth: document.getElementById("field3").value,
+        physicalHealthDays: parseInt(document.getElementById("field4").value, 10),
+        mentalHealthDays: parseInt(document.getElementById("field5").value, 10),
+        lastCheckupTime: document.getElementById("field6").value,
+        physicalActivities: document.getElementById("field7").value,
+        sleepHours: parseInt(document.getElementById("field8").value, 10),
+        removedTeeth: document.getElementById("field9").value,
+        hadAngina: document.getElementById("field10").value,
+        hadStroke: document.getElementById("field11").value,
+        hadAsthma: document.getElementById("field12").value,
+        hadSkinCancer: document.getElementById("field13").value,
+        hadCOPD: document.getElementById("field14").value,
+        hadDepressiveDisorder: document.getElementById("field15").value,
+        hadKidneyDisease: document.getElementById("field16").value,
+        hadArthritis: document.getElementById("field17").value,
+        hadDiabetes: document.getElementById("field18").value,
+        deafOrHardOfHearing: document.getElementById("field19").value,
+        blindOrVisionDifficulty: document.getElementById("field20").value,
+        smokerStatus: document.getElementById("field21").value,
+        raceEthnicityCategory: document.getElementById("field22").value,
+        ageCategory: document.getElementById("field23").value,
+        heightInMeters: parseFloat(document.getElementById("field24").value),
+        weightInKilograms: parseFloat(document.getElementById("field25").value),
+        bmi: parseFloat(document.getElementById("field26").value)
+    };
+
+    try {
+        const response = await fetch("https://2c2930de10934de28b7c17a09afa6c99.app.posit.cloud/predict", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData)
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const result = await response.json();
+        console.log(result);
+
+        document.getElementById("result").innerText = `Prediction: ${result.prediction}`;
+    } catch (error) {
+        console.error("Error:", error);
+        document.getElementById("result").innerText = "Error: Could not fetch prediction. Check your API or connection.";
+    }
+});
